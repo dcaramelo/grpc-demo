@@ -5,7 +5,7 @@ option java_package = "io.grpc.examples.helloworld";
 option java_outer_classname = "HelloWorldProto";
 option objc_class_prefix = "HLW";
 
-package ogury;
+package example;
 
 service Example {
   rpc SendMessage (MessageRequest) returns (MessageReply) {}

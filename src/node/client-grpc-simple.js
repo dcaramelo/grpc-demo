@@ -11,17 +11,9 @@ const MESSAGE = {
 const main = function() {
   const client = new example_proto.Example(HOST + ':50052', grpc.credentials.createInsecure())
 
-  const call = client.sendMessageStreamDuplex()
-
-  call.on('data', function(data) {
-    console.log('Data Received', data)
+  client.sendMessage(MESSAGE, function(err, response) {
+    console.log('Response:', response);
   })
-  call.on('end', function() {
-  })
-
-  call.write(MESSAGE)
-  call.write(MESSAGE)
-  call.write(MESSAGE)
 
 }
 

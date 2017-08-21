@@ -1,0 +1,11 @@
+{
+    "name": "grpc-demo",
+    "version": "0.1.0",
+    "dependencies": {
+        "grpc": "1.4.1",
+        "lodash": "4.17.4",
+        "express": "4.13.4",
+        "request": "2.71.0",
+        "body-parser": "1.17.2"
+    }
+}
