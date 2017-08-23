@@ -1,0 +1,5 @@
+management.security.enabled: false
+
+server.port: 5000
+
+grpc.port : 50052
