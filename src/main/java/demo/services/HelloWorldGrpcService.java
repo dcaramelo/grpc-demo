@@ -29,6 +29,7 @@ public class HelloWorldGrpcService extends ExampleGrpc.ExampleImplBase {
                 .setSuccess(MessageReply.EnumSuccess.OK);
 
         responseObserver.onNext(builder.build());
+        responseObserver.onCompleted();
     }
 
     public void sendMessageStreamResponse(MessageRequest request, StreamObserver<MessageReply> responseObserver) {
@@ -37,6 +38,7 @@ public class HelloWorldGrpcService extends ExampleGrpc.ExampleImplBase {
                 .setSuccess(MessageReply.EnumSuccess.OK);
 
         responseObserver.onNext(builder.build());
+        responseObserver.onCompleted();
     }
 
     public StreamObserver<MessageRequest> sendMessageStream(StreamObserver<MessageReply> responseObserver) {

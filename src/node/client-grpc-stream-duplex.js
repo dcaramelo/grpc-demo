@@ -22,6 +22,7 @@ const main = function() {
   call.write(MESSAGE)
   call.write(MESSAGE)
   call.write(MESSAGE)
+  call.end()
 
 }
 
