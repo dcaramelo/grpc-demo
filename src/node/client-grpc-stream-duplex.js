@@ -1,8 +1,8 @@
-const PROTO_PATH = process.env.PROTO || '../../protos/example.proto'
+const PROTO_PATH = process.env.PROTO || '../main/proto/example.proto'
 const HOST = process.env.HOST || 'localhost'
 
 const grpc = require('grpc')
-const example_proto = grpc.load(PROTO_PATH).example
+const example_proto = grpc.load(PROTO_PATH).demo.beans.proto
 
 const MESSAGE = {
   name: 'Peter'

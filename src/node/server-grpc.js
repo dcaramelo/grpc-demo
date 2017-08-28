@@ -1,7 +1,7 @@
-const PROTO_PATH = process.env.PROTO || '../../protos/example.proto'
+const PROTO_PATH = process.env.PROTO || '../main/proto/example.proto'
 
 const grpc = require('grpc')
-const example_proto = grpc.load(PROTO_PATH).example
+const example_proto = grpc.load(PROTO_PATH).demo.beans.proto
 
 function sendMessage(call, callback) {
   callback(null, {success: 'OK', message: `Hello ${call.request.name}`})
