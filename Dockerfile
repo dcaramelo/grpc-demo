@@ -6,6 +6,6 @@ COPY . /var/app/grpc
 
 RUN mvn install
 
-EXPOSE 50052
+EXPOSE 50052 5000
 
 CMD ["java", "-jar", "target/grpc-demo-0.1.0.jar"]
