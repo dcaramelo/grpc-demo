@@ -20,6 +20,7 @@ newReq = function() {
       url: 'http://' + HOST + ':5000/hello-world',
       rejectUnauthorized : false,
       json: true,
+      forever: true,
       body: MESSAGE
     }
     const init_time = Date.now()
