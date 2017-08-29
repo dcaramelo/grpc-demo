@@ -1,10 +1,8 @@
 package demo.services;
 
+import demo.beans.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloWorldHttpService {
@@ -16,9 +14,9 @@ public class HelloWorldHttpService {
         this.process = process;
     }
 
-    @RequestMapping("/hello-world")
+    @RequestMapping(method = RequestMethod.POST, value = "/hello-world")
     public @ResponseBody
-    String helloWorld(@RequestParam(value = "name") final String name) {
-        return process.transform(name);
+    String helloWorld(@RequestBody final User user) {
+        return process.transform(user.getName());
     }
 }
