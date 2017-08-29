@@ -17,13 +17,13 @@ newReq = function() {
   return function(callback) {
 
     var options = {
-      url: 'http://' + HOST + ':5000/hello-world?name=Peter',
-      rejectUnauthorized : false//,
-      // json: true,
-      // body: MESSAGE
+      url: 'http://' + HOST + ':5000/hello-world',
+      rejectUnauthorized : false,
+      json: true,
+      body: MESSAGE
     }
     const init_time = Date.now()
-    request.get(options, function(err, data){
+    request.post(options, function(err, data){
       duration.update(Date.now() - init_time)
       rps.mark()
       callback()
