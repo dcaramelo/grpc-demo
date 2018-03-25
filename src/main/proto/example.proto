@@ -15,16 +15,59 @@ service Example {
   rpc SendMessageStreamDuplex (stream MessageRequest) returns (stream MessageReply) {}
 }
 
-message MessageRequest {
-  string name = 1;
-}
-
 message MessageReply {
   enum EnumSuccess {
     OK = 0;
     KO = 1;
   }
-  EnumSuccess success = 1;
-  string message = 2;
+  int32 id = 1;
+  EnumSuccess success = 2;
+  string message = 3;
 }
 
+message MessageRequest {
+    int32 id = 1;
+    string name = 2;
+    int32 field3 = 3;
+    int32 field4 = 4;
+    int32 field5 = 5;
+    int32 field6 = 6;
+    int32 field7 = 7;
+    int32 field8 = 8;
+    int32 field9 = 9;
+    int32 field10 = 10;
+    int32 field11 = 11;
+    int32 field12 = 12;
+    int32 field13 = 13;
+    int32 field14 = 14;
+    int32 field15 = 15;
+    int32 field16 = 16;
+    int32 field17 = 17;
+    int32 field18 = 18;
+    int32 field19 = 19;
+    int32 field20 = 20;
+    int32 field21 = 21;
+    int32 field22 = 22;
+    int32 field23 = 23;
+    int32 field24 = 24;
+    int32 field25 = 25;
+    int32 field26 = 26;
+    int32 field27 = 27;
+    int32 field28 = 28;
+    int32 field29 = 29;
+    int32 field30 = 30;
+    int32 field31 = 31;
+    int32 field32 = 32;
+    int32 field33 = 33;
+    int32 field34 = 34;
+    int32 field35 = 35;
+    int32 field36 = 36;
+    int32 field37 = 37;
+    int32 field38 = 38;
+    int32 field39 = 39;
+    int32 field40 = 40;
+    int32 field41 = 41;
+    int32 field42 = 42;
+    int32 field43 = 43;
+    int32 field44 = 44;
+}

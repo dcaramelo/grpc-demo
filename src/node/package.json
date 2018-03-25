@@ -5,9 +5,11 @@
     "async": "2.5.0",
     "body-parser": "1.17.2",
     "express": "4.13.4",
-    "grpc": "1.4.1",
+    "grpc": "1.10.0",
+    "lazy-socket": "0.0.4",
     "lodash": "4.17.4",
-    "measured": "1.1.0",
-    "request": "2.71.0"
+    "measured": "^1.1.0",
+    "request": "2.71.0",
+    "url": "^0.11.0"
   }
 }
