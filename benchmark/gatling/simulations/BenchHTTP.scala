@@ -14,9 +14,9 @@ class BenchHTTP extends Simulation {
 
     val uri1 = "http://localhost:3000/test_http"
 
-  val scn = scenario("BenchGRPC").repeat(1000) {
+  val scn = scenario("BenchGRPC").repeat(1000000) {
     exec(http("request_0").get("/test_http"))
   }
 
-  setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)
+  setUp(scn.inject(atOnceUsers(30))).protocols(httpProtocol)
 }

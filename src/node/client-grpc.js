@@ -1,4 +1,5 @@
 metrics = require('./data-connectors/metrics')
+const cloneDeep = require('clone-deep')
 
 const PROTO_PATH = process.env.PROTO || '../main/proto/example.proto'
 const MESSAGE_PATH = process.env.MESSAGE || '../../benchmark/fixtures/short-message.json'
@@ -41,14 +42,15 @@ const main = function() {
   app.get('/test_stream', function (req, res) {
     const init_date = Date.now()
     const c = counter++
-    MESSAGE.id = c
+    let m = cloneDeep(MESSAGE)
+    m.id = c
     callbacks[c] = function(res, init_date) {
       return function() {
         metrics.save("grpc_bench.client.stream", Date.now() - init_date)
         res.send('Hello Test!')
       }
     }(res, init_date)
-    call.write(MESSAGE)
+    call.write(m)
   })
 
   app.get('/test_single', function (req, res) {
