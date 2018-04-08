@@ -6,7 +6,7 @@ option java_outer_classname = "DemoProto";
 package demo.beans.proto;
 
 service Example {
-  rpc SendMessage (MessageRequest) returns (MessageReply) {}
+  rpc SendMessageSimple (MessageRequest) returns (MessageReply) {}
 
   rpc SendMessageStream (stream MessageRequest) returns (MessageReply) {}
 

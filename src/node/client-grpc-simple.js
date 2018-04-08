@@ -13,12 +13,12 @@ const client = new example_proto.Example(HOST + ':50052', grpc.credentials.creat
 
 const main = function() {
 
-  client.sendMessage(MESSAGE, function(err, response) {
+  client.sendMessageSimple(MESSAGE, function(err, response) {
     console.log('Response:', response, err);
   })
 
   app.get('/test', function (req, res) {
-    client.sendMessage(MESSAGE, function(err, response) {
+    client.sendMessageSimple(MESSAGE, function(err, response) {
       res.send('Hello Test!')
     })
   })

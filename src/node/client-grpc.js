@@ -28,7 +28,7 @@ const main = function() {
 
   // Test first messages (stream and single)
   // call.write(MESSAGE)
-  // client.sendMessage(MESSAGE, function(err, response) {
+  // client.sendMessageSimple(MESSAGE, function(err, response) {
   //   console.log('Response:', response, err);
   // })
 
@@ -55,7 +55,7 @@ const main = function() {
 
   app.get('/test_single', function (req, res) {
     const init_date = Date.now()
-    client.sendMessage(MESSAGE, function () {
+    client.sendMessageSimple(MESSAGE, function () {
       metrics.save("grpc_bench.client.single", Date.now() - init_date)
       res.send('Hello Test!')
     })

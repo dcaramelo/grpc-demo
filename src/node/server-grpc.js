@@ -5,7 +5,7 @@ const example_proto = grpc.load(PROTO_PATH).demo.beans.proto
 
 const os = require('os')
 
-function sendMessage(call, callback) {
+function sendMessageSimple(call, callback) {
   callback(null, {success: 'OK', message: `Hello ${call.request.name}`})
 }
 
@@ -36,14 +36,14 @@ function sendMessageStreamDuplex(call) {
 const main = function() {
   const server = new grpc.Server()
   server.addService(example_proto.Example.service, {
-    sendMessage: sendMessage,
+    sendMessageSimple: sendMessageSimple,
     sendMessageStream: sendMessageStream,
     sendMessageStreamResponse: sendMessageStreamResponse,
     sendMessageStreamDuplex: sendMessageStreamDuplex
   })
 
   setInterval(function() {
-    console.log(os.loadavg());
+    // console.log(os.loadavg());
   }, 1000)
 
   server.bind('0.0.0.0:50052', grpc.ServerCredentials.createInsecure())
