@@ -23,7 +23,7 @@ public class HelloWorldGrpcService extends ExampleGrpc.ExampleImplBase {
         this.process = process;
     }
 
-    public void sendMessage(MessageRequest request, StreamObserver<MessageReply> responseObserver) {
+    public void sendMessageSimple(MessageRequest request, StreamObserver<MessageReply> responseObserver) {
         final MessageReply.Builder builder = MessageReply.newBuilder()
                 .setMessage(process.transform(request.getName()))
                 .setSuccess(MessageReply.EnumSuccess.OK);

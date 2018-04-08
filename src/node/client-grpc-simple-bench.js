@@ -19,7 +19,7 @@ const duration = collection.histogram('duration')
 newReq = function() {
   return function(callback) {
     const init_time = Date.now()
-    client.sendMessage(MESSAGE, function(err, response) {
+    client.sendMessageSimple(MESSAGE, function(err, response) {
       duration.update(Date.now() - init_time)
       rps.mark()
       callback()

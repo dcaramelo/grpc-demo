@@ -6,7 +6,7 @@ option java_outer_classname = "DemoProto";
 package demo.beans.proto;
 
 service Example {
-  rpc SendMessage (MessageRequest) returns (MessageReply) {}
+  rpc SendMessageSimple (MessageRequest) returns (MessageReply) {}
 
   rpc SendMessageStream (stream MessageRequest) returns (MessageReply) {}
 
@@ -15,16 +15,17 @@ service Example {
   rpc SendMessageStreamDuplex (stream MessageRequest) returns (stream MessageReply) {}
 }
 
-message MessageRequest {
-  string name = 1;
-}
-
 message MessageReply {
   enum EnumSuccess {
     OK = 0;
     KO = 1;
   }
-  EnumSuccess success = 1;
-  string message = 2;
+  int32 id = 1;
+  EnumSuccess success = 2;
+  string message = 3;
 }
 
+message MessageRequest {
+    int32 id = 1;
+    string name = 2;
+}

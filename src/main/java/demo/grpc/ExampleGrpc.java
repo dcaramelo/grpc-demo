@@ -33,7 +33,7 @@ public final class ExampleGrpc {
       io.grpc.MethodDescriptor.<demo.beans.proto.MessageRequest, demo.beans.proto.MessageReply>newBuilder()
           .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
           .setFullMethodName(generateFullMethodName(
-              "demo.beans.proto.Example", "SendMessage"))
+              "demo.beans.proto.Example", "SendMessageSimple"))
           .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
               demo.beans.proto.MessageRequest.getDefaultInstance()))
           .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
@@ -105,7 +105,7 @@ public final class ExampleGrpc {
 
     /**
      */
-    public void sendMessage(demo.beans.proto.MessageRequest request,
+    public void sendMessageSimple(demo.beans.proto.MessageRequest request,
         io.grpc.stub.StreamObserver<demo.beans.proto.MessageReply> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_SEND_MESSAGE, responseObserver);
     }
@@ -185,7 +185,7 @@ public final class ExampleGrpc {
 
     /**
      */
-    public void sendMessage(demo.beans.proto.MessageRequest request,
+    public void sendMessageSimple(demo.beans.proto.MessageRequest request,
         io.grpc.stub.StreamObserver<demo.beans.proto.MessageReply> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(METHOD_SEND_MESSAGE, getCallOptions()), request, responseObserver);
@@ -236,7 +236,7 @@ public final class ExampleGrpc {
 
     /**
      */
-    public demo.beans.proto.MessageReply sendMessage(demo.beans.proto.MessageRequest request) {
+    public demo.beans.proto.MessageReply sendMessageSimple(demo.beans.proto.MessageRequest request) {
       return blockingUnaryCall(
           getChannel(), METHOD_SEND_MESSAGE, getCallOptions(), request);
     }
@@ -270,7 +270,7 @@ public final class ExampleGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<demo.beans.proto.MessageReply> sendMessage(
+    public com.google.common.util.concurrent.ListenableFuture<demo.beans.proto.MessageReply> sendMessageSimple(
         demo.beans.proto.MessageRequest request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_SEND_MESSAGE, getCallOptions()), request);
@@ -300,7 +300,7 @@ public final class ExampleGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_SEND_MESSAGE:
-          serviceImpl.sendMessage((demo.beans.proto.MessageRequest) request,
+          serviceImpl.sendMessageSimple((demo.beans.proto.MessageRequest) request,
               (io.grpc.stub.StreamObserver<demo.beans.proto.MessageReply>) responseObserver);
           break;
         case METHODID_SEND_MESSAGE_STREAM_RESPONSE:
